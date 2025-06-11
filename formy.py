@@ -5,6 +5,8 @@ driver=webdriver.Chrome()
 driver.implicitly_wait(5)
 driver.get("https://formy-project.herokuapp.com/")
 
+# page1
+
 #unable to click anchor tag 
 
 AutoComplete=driver.find_element(By.XPATH,"//a[text()='Autocomplete']")
@@ -32,5 +34,19 @@ time.sleep(2)
 homebtn=driver.find_element(By.ID,"logo")
 homebtn.click()
 time.sleep(1)
+
+# page 2
+
+Buttons=driver.find_element(By.XPATH,"//a[text()='Buttons']")
+Buttons.click()
+time.sleep()
+success=driver.find_element(By.XPATH,"//button[text()='Success']")
+success.click()
+linkbtn=driver.find_element(By.XPATH,"//button[text()='Link']")
+linkbtn.click()
+middlebtn=driver.find_element(By.XPATH,"//button[text()='Middle']")
+middlebtn.click()
+btn1=driver.find_element(By.XPATH,"//button[text()='1']")
+btn1.click()
 
 time.sleep(10)
