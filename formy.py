@@ -51,5 +51,4 @@ btn1.click()
 
 time.sleep(10)
 
-# testing branches using checkout
 
