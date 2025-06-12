@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
 import time
 driver=webdriver.Chrome()
 driver.implicitly_wait(10)
@@ -43,14 +44,11 @@ datepicker=driver.find_element(By.NAME,"my-date")
 datepicker.send_keys("10/06/2025")
 print("date changed")
 time.sleep(1)
-
-
-# selecting range error
-
-
 rangeselector=driver.find_element(By.NAME,"my-range")
-rangeselector.send_keys("9")
-print("range changed")
-# submitbtn=driver.find_element(By.CSS_SELECTOR,"button[type='submit']")
-# # submitbtn.click()
+rangeselector.click()
+rangeselector.send_keys(Keys.HOME)
+for i in range(7):
+    rangeselector.send_keys(Keys.ARROW_RIGHT)
+submitbtn=driver.find_element(By.CSS_SELECTOR,"button[type='submit']")
+# submitbtn.click()
 time.sleep(10)
